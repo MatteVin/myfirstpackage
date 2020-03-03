@@ -1,0 +1,14 @@
+Package: myfirstpackage
+Title: The first package
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Matteo",
+           family = "Vindrola",
+           role = c("aut", "cre"),
+           email = "matte.vindrola@gmail.com",
+           comment = c(ORCID = "YOUR-ORCID-ID"))
+Description: I package to be used for project 3
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.0.2
