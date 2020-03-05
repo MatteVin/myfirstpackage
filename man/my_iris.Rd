@@ -14,7 +14,7 @@
 }}
 \source{
 Fisher, R. A. (1936) The use of measurements in taxonomic problems.
-\emph{Annals of Eugenics}, 7, Part II, 179-188
+\emph{Annals of Eugenics}, 7, Part II, 179-188.
 
 The data were collected by Anderson, Edgard (1935). The irises of the Gaspe
 Peninsula, \emph{Bulletin of the America Iris Society}, 59, 2-5.

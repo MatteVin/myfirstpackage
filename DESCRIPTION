@@ -8,6 +8,7 @@ Authors@R:
            email = "matte.vindrola@gmail.com",
            comment = c(ORCID = "YOUR-ORCID-ID"))
 Description: I package to be used for project 3
+Depends: R (>= 2.10)
 License: GPL-3
 Encoding: UTF-8
 LazyData: true

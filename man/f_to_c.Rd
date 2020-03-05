@@ -10,7 +10,7 @@ f_to_c(temp_F)
 \item{temp_F}{Numeric input indicating temperature in Fahrenhite.}
 }
 \value{
-Numeric indicating temperature \code{temp_F} converted to Celsius
+Numeric indicating temperature \code{temp_F} converted to Celsius.
 }
 \description{
 This function converts from Fahrenhite to Celsius.

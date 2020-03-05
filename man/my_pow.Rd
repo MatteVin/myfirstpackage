@@ -10,10 +10,10 @@ my_pow(x, power = 2)
 \item{x}{Numeric input to be raised to the power of \code{power}.}
 
 \item{power}{Numeric input for the power that \code{x} will be raised to,
-defaults to \code{2}}
+defaults to \code{2}.}
 }
 \value{
-Numeric representing \code{x} raised to the power of \code{power}
+Numeric representing \code{x} raised to the power of \code{power}.
 }
 \description{
 This function rises input to a power.

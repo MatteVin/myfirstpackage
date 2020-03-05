@@ -4,9 +4,9 @@
 #'
 #' @param x Numeric input to be raised to the power of \code{power}.
 #' @param  power Numeric input for the power that \code{x} will be raised to,
-#'   defaults to \code{2}
+#'   defaults to \code{2}.
 #'
-#' @return Numeric representing \code{x} raised to the power of \code{power}
+#' @return Numeric representing \code{x} raised to the power of \code{power}.
 #'
 #' @examples
 #' my_pow(4)

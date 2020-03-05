@@ -5,7 +5,7 @@
 #' @param  temp_F Numeric input indicating temperature in Fahrenhite.
 #' @keywords temperature
 #'
-#' @return Numeric indicating temperature \code{temp_F} converted to Celsius
+#' @return Numeric indicating temperature \code{temp_F} converted to Celsius.
 #'
 #' @examples
 #' f_to_c(32)
