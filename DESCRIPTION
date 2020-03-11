@@ -17,8 +17,7 @@ Suggests:
     testthat (>= 2.1.0),
     covr,
     knitr,
-    rmarkdown,
-    magrittr
+    rmarkdown
 Imports: magrittr,
   class,
   randomForest
