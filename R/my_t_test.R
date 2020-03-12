@@ -1,15 +1,23 @@
-#' Fahrenhite converter
+#' Student's t-test
 #'
 #' This function performs a one sample student's t-test on a vector of data.
 #'
-#' @param  x 	a (non-empty) numeric vector of data values.
-#' @param  alternative a character string specifying the alternative hypothesis,
-#'  must be one of "two.sided" (default), "greater" or "less". You can specify
-#'  just the initial letter.
-#' @param  mu
+#' @param  x 	a numeric vector of data.
+#' @param  alternative a character string specifying the alternative hypothesis.
+#'  This only accepts "two.sided", "less", or "greater".
+#' @param  mu  a number indicating the null hypothesis value of the mean.
 #' @keywords t-test
 #'
-#' @return Numeric indicating temperature \code{temp_F} converted to Celsius.
+#' @return A list with elements: \code{test_stat}, the numeric test statistic,
+#' \code{df}, a numeric containing the degrees of freedom, \code{alternative}
+#' character containing the value of the parameter alternative, \code{p_val},
+#' a numeric p-value.
+#'
+#'
+#' test_stat: the numeric test statistic.
+#' df: the degrees of freedom.
+#' alternative: the value of the parameter alternative.
+#' p_val: the numeric p-value.
 #'
 #' @examples
 #' f_to_c(32)

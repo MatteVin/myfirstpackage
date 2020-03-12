@@ -2,21 +2,29 @@
 % Please edit documentation in R/my_t_test.R
 \name{my_t_test}
 \alias{my_t_test}
-\title{Fahrenhite converter}
+\title{Student's t-test}
 \usage{
 my_t_test(x, alternative, mu)
 }
 \arguments{
-\item{x}{a (non-empty) numeric vector of data values.}
+\item{x}{a numeric vector of data.}
 
-\item{alternative}{a character string specifying the alternative hypothesis,
-must be one of "two.sided" (default), "greater" or "less". You can specify
-just the initial letter.}
+\item{alternative}{a character string specifying the alternative hypothesis.
+This only accepts "two.sided", "less", or "greater".}
 
-\item{mu}{}
+\item{mu}{a number indicating the null hypothesis value of the mean.}
 }
 \value{
-Numeric indicating temperature \code{temp_F} converted to Celsius.
+A list with elements: \code{test_stat}, the numeric test statistic,
+\code{df}, a numeric containing the degrees of freedom, \code{alternative}
+character containing the value of the parameter alternative, \code{p_val},
+a numeric p-value.
+
+
+test_stat: the numeric test statistic.
+df: the degrees of freedom.
+alternative: the value of the parameter alternative.
+p_val: the numeric p-value.
 }
 \description{
 This function performs a one sample student's t-test on a vector of data.
