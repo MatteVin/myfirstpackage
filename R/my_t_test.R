@@ -8,25 +8,20 @@
 #' @param  mu  a number indicating the null hypothesis value of the mean.
 #' @keywords t-test
 #'
-#' @return A list with elements: \code{test_stat}, the numeric test statistic,
-#' \code{df}, a numeric containing the degrees of freedom, \code{alternative}
-#' character containing the value of the parameter alternative, \code{p_val},
+#' @return A list with elements: \code{test_stat}, the numeric test statistic;
+#' \code{df}, a numeric containing the degrees of freedom; \code{alternative}
+#' character containing the value of the parameter alternative; \code{p_val},
 #' a numeric p-value.
 #'
-#'
-#' test_stat: the numeric test statistic.
-#' df: the degrees of freedom.
-#' alternative: the value of the parameter alternative.
-#' p_val: the numeric p-value.
-#'
 #' @examples
-#' f_to_c(32)
-#' f_to_c(212)
+#' t_test(c(1, 5 ,4 , 5, 2, 6, 4), greater, 5)
+#' t_test(1:20, two.sided, 18)
 #'
 #' @export
 #t-test function
 my_t_test <- function(x, alternative, mu) {
-  #check for the parameter alternative to be one of the three allowed, if it isn't
+  #check for the parameter alternative to be one of the three allowed, if it
+  #isn't give a warning.
   if(!(alternative %in% c("two.sided", "less", "greater"))){
     warning("alternative not recognized")
   }

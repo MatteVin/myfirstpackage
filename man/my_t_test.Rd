@@ -15,23 +15,17 @@ This only accepts "two.sided", "less", or "greater".}
 \item{mu}{a number indicating the null hypothesis value of the mean.}
 }
 \value{
-A list with elements: \code{test_stat}, the numeric test statistic,
-\code{df}, a numeric containing the degrees of freedom, \code{alternative}
-character containing the value of the parameter alternative, \code{p_val},
+A list with elements: \code{test_stat}, the numeric test statistic;
+\code{df}, a numeric containing the degrees of freedom; \code{alternative}
+character containing the value of the parameter alternative; \code{p_val},
 a numeric p-value.
-
-
-test_stat: the numeric test statistic.
-df: the degrees of freedom.
-alternative: the value of the parameter alternative.
-p_val: the numeric p-value.
 }
 \description{
 This function performs a one sample student's t-test on a vector of data.
 }
 \examples{
-f_to_c(32)
-f_to_c(212)
+t_test(c(1, 5 ,4 , 5, 2, 6, 4), greater, 5)
+t_test(1:20, two.sided, 18)
 
 }
 \keyword{t-test}
