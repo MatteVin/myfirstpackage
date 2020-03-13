@@ -24,8 +24,7 @@ a numeric p-value.
 This function performs a one sample student's t-test on a vector of data.
 }
 \examples{
-t_test(c(1, 5 ,4 , 5, 2, 6, 4), greater, 5)
-t_test(1:20, two.sided, 18)
+my_t_test(c(1, 5 ,4 , 5, 2, 6, 4), "greater", 5)
+my_t_test(1:20, "two.sided", 18)
 
 }
-\keyword{t-test}

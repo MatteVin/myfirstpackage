@@ -4,9 +4,8 @@
 #'
 #' @param  x 	a numeric vector of data.
 #' @param  alternative a character string specifying the alternative hypothesis.
-#'  This only accepts "two.sided", "less", or "greater".
+#' This only accepts "two.sided", "less", or "greater".
 #' @param  mu  a number indicating the null hypothesis value of the mean.
-#' @keywords t-test
 #'
 #' @return A list with elements: \code{test_stat}, the numeric test statistic;
 #' \code{df}, a numeric containing the degrees of freedom; \code{alternative}
@@ -14,8 +13,8 @@
 #' a numeric p-value.
 #'
 #' @examples
-#' t_test(c(1, 5 ,4 , 5, 2, 6, 4), greater, 5)
-#' t_test(1:20, two.sided, 18)
+#' my_t_test(c(1, 5 ,4 , 5, 2, 6, 4), "greater", 5)
+#' my_t_test(1:20, "two.sided", 18)
 #'
 #' @export
 #t-test function

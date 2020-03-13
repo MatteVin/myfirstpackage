@@ -3,19 +3,10 @@
 #' This function is used to fit linear models. It can be used to carry out
 #' regressions.
 #'
-#' @param  formula a \code{formula} class object: a symbolic description of the
-#' model to be fitted.
-#' @param  data input data frame.
-#' @keywords t-test
+#' @param formula_lm formula
+#' @param data_lm dtatset
 #'
-#' @return A list with elements: \code{test_stat}, the numeric test statistic;
-#' \code{df}, a numeric containing the degrees of freedom; \code{alternative}
-#' character containing the value of the parameter alternative; \code{p_val},
-#' a numeric p-value.
-#'
-#' @examples
-#' t_test(c(1, 5 ,4 , 5, 2, 6, 4), greater, 5)
-#' t_test(1:20, two.sided, 18)
+#' @import stats
 #'
 #' @export
 #Creates my_lm a function that takes in as parameters a formula and a dataset
