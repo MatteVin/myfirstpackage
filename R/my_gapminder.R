@@ -1,7 +1,8 @@
 #' Edgard Anderson's Iris Data
 #'
-#' Excerpt of the Gapminder data on life expectancy, GDP per capita,
-#' and population by country.
+#' The famous \code{\link[datasets]{iris}} dataset, an excerpt of the Gapminder
+#' data on life expectancy, GDP per capita, and population by country. To be
+#' used in our package.
 #'
 #' @format a data frame with 1704 observations and 6 variables:
 #' \describe{
