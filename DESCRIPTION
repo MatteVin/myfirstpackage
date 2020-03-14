@@ -18,8 +18,10 @@ Suggests:
     covr,
     knitr,
     rmarkdown,
+    ggplot2
 Imports: magrittr,
   class,
   randomForest,
-  stats
+  stats,
+  dplyr
 VignetteBuilder: knitr

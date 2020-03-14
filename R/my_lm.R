@@ -16,6 +16,8 @@
 #' my_lm(c(1, 5 ,4 , 5, 2, 6, 4), "greater", 5)
 #' my_lm(1:20, "two.sided", 18)
 #'
+#' @keywords
+#'
 #' @import stats
 #'
 #' @export
