@@ -23,7 +23,8 @@ development".
 my_gapminder
 }
 \description{
-Excerpt of the Gapminder data on life expectancy, GDP per capita,
-and population by country.
+The famous \code{\link[datasets]{iris}} dataset, an excerpt of the Gapminder
+data on life expectancy, GDP per capita, and population by country. To be
+used in our package.
 }
 \keyword{datasets}
