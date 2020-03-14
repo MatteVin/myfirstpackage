@@ -10,7 +10,7 @@
 #'
 #' @keywords
 #'
-#' @import randomForest dplyr
+#' @import randomForest dplyr myfirstpackage
 #'
 #' @export
 #My Random Forest Cross-Validation function
