@@ -5,8 +5,8 @@
 #'
 #' @param train input data frame.
 #' @param cl true class value of training data.
-#' @param k_nn integer representing the number of neighbors
-#' @param k_cv integer representing the number of folds
+#' @param k_nn integer representing the number of neighbors.
+#' @param k_cv integer representing the number of folds.
 #'
 #' @keywords potato
 #'

@@ -1,16 +1,16 @@
 #' Random Forest Cross-Validation
 #'
-#' description
+#' description.
 #'
-#' @param  k something something
+#' @param  k something something.
 #'
-#' @return
+#' @return something must be returned.
 #'
 #' @examples
 #' my_rf_cv(4)
 #' my_rf_cv(10)
 #'
-#' @keywords
+#' @keywords shower
 #'
 #' @import randomForest tidyverse
 #'
