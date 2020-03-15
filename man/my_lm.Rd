@@ -23,8 +23,8 @@ This function is used to fit linear models. It can be used to carry out
 regressions.
 }
 \examples{
-my_lm(c(1, 5 ,4 , 5, 2, 6, 4), "greater", 5)
-my_lm(1:20, "two.sided", 18)
+my_lm(Sepal.Length ~ Sepal.Width, data = my_iris))
+my_lm(Sepal.Length ~ Sepal.Width + Petal.Length, data = my_iris))
 
 }
 \keyword{}
