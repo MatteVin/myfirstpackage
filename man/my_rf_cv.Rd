@@ -7,7 +7,7 @@
 my_rf_cv(k)
 }
 \arguments{
-\item{k}{}
+\item{k}{something something}
 }
 \value{
 
@@ -16,6 +16,8 @@ my_rf_cv(k)
 description
 }
 \examples{
+my_rf_cv(4)
+my_rf_cv(10)
 
 }
 \keyword{}

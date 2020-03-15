@@ -2,11 +2,13 @@
 #'
 #' description
 #'
-#' @param  k
+#' @param  k something something
 #'
 #' @return
 #'
 #' @examples
+#' my_rf_cv(4)
+#' my_rf_cv(10)
 #'
 #' @keywords
 #'
