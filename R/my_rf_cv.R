@@ -8,8 +8,7 @@
 #' my_rf_cv(4)
 #' my_rf_cv(10)
 #' @keywords shower
-#' @importFrom magrittr %>%
-#' @importFrom dplyr select
+#' @import randomForest dplyr magrittr
 #' @export
 #My Random Forest Cross-Validation function
 my_rf_cv <- function(k){

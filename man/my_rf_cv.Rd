@@ -18,6 +18,5 @@ description.
 \examples{
 my_rf_cv(4)
 my_rf_cv(10)
-
 }
 \keyword{shower}
