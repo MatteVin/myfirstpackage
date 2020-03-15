@@ -7,17 +7,17 @@
 my_rf_cv(k)
 }
 \arguments{
-\item{k}{something something}
+\item{k}{something something.}
 }
 \value{
-
+something must be returned.
 }
 \description{
-description
+description.
 }
 \examples{
 my_rf_cv(4)
 my_rf_cv(10)
 
 }
-\keyword{}
+\keyword{shower}

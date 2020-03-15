@@ -11,9 +11,9 @@ my_knn_cv(train, cl, k_nn, k_cv)
 
 \item{cl}{true class value of training data.}
 
-\item{k_nn}{integer representing the number of neighbors}
+\item{k_nn}{integer representing the number of neighbors.}
 
-\item{k_cv}{integer representing the number of folds}
+\item{k_cv}{integer representing the number of folds.}
 }
 \value{
 A table containing all numerics, with one row for each coefficient
