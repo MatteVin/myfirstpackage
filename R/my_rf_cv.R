@@ -9,13 +9,14 @@
 #' my_rf_cv(10)
 #' @keywords shower
 #' @import randomForest dplyr magrittr
+#'
 #' @export
 #My Random Forest Cross-Validation function
 my_rf_cv <- function(k){
   # Split data in k parts, randomly
   folds <- sample(rep(1:k, length = nrow(my_gapminder)))
   # Use data from before, leaving out species as we won't need it
-  data <- data.frame(my_gapminder[,6], my_gapminder[,5], folds)
+  data <- data.frame(my_gapminder["lifeExp"], my_gapminder["gdpPercap"], folds)
   #List for string cv errors on each iteration
   cv_err_list <- rep(NA, k)
   #loops trough the groups

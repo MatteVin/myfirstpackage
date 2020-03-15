@@ -13,6 +13,7 @@
 #' \code{Std. Error}, the \code{t value}, and \code{Pr(>|t|)} (the p-value for
 #' the t-test).
 #' @import stats class dplyr magrittr
+#'
 #' @export
 my_knn_cv <- function(train, cl, k_nn, k_cv){
   # Split data in k_cv parts, randomly
