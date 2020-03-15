@@ -12,7 +12,7 @@
 #'
 #' @keywords shower
 #'
-#' @import randomForest magrittr
+#' @import randomForest dplyr
 #'
 #' @export
 #My Random Forest Cross-Validation function
