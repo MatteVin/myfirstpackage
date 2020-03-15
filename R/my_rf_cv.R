@@ -12,7 +12,7 @@
 #'
 #' @keywords shower
 #'
-#' @import randomForest tidyverse
+#' @import randomForest magrittr
 #'
 #' @export
 #My Random Forest Cross-Validation function

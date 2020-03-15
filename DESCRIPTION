@@ -23,5 +23,5 @@ Imports: magrittr,
   class,
   randomForest,
   stats,
-  tidyverse
+  magrittr
 VignetteBuilder: knitr
