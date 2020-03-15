@@ -25,9 +25,4 @@ the t-test).
 This function is used to fit linear models. It can be used to carry out
 regressions.
 }
-\examples{
-my_knn_cv(train = my_iris[,-5], cl = my_iris[,5], k_nn = 1, k_cv = 5)
-my_knn_cv(train = my_iris[,-5], cl = my_iris[,5], k_nn = 4, k_cv = 5)
-
-}
 \keyword{potato}

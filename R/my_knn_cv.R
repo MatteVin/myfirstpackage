@@ -12,12 +12,8 @@
 #' including the intercept and colums for the \code{Estimate}, the
 #' \code{Std. Error}, the \code{t value}, and \code{Pr(>|t|)} (the p-value for
 #' the t-test).
-#' @examples
-#' my_knn_cv(train = my_iris[,-5], cl = my_iris[,5], k_nn = 1, k_cv = 5)
-#' my_knn_cv(train = my_iris[,-5], cl = my_iris[,5], k_nn = 4, k_cv = 5)
 #' @import stats class dplyr magrittr
 #' @export
-#My k-Nearest Neighbors Cross-Validation function
 my_knn_cv <- function(train, cl, k_nn, k_cv){
   # Split data in k_cv parts, randomly
   folds <- sample(rep(1:k_cv, length = nrow(train)))
