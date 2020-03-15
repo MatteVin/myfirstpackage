@@ -19,7 +19,7 @@ Suggests:
     knitr,
     rmarkdown,
     ggplot2
-Imports: dplyr,
+Imports: tidyverse,
   class,
   randomForest,
   stats
