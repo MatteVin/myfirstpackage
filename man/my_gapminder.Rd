@@ -13,7 +13,6 @@ a data frame with 1704 observations and 6 variables:
 \item{lifeExp}{life expectancy at birth, in years}
 \item{pop}{population}
 \item{gdpPercap}{Gross Domestic Product per capita (US$, inflation-adjusted)}
-
 }
 }
 \source{

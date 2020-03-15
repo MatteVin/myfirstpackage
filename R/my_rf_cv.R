@@ -3,17 +3,13 @@
 #' description.
 #'
 #' @param  k something something.
-#'
 #' @return something must be returned.
-#'
 #' @examples
 #' my_rf_cv(4)
 #' my_rf_cv(10)
-#'
 #' @keywords shower
-#'
-#' @import randomForest dplyr magrittr
-#'
+#' @importFrom magrittr %>%
+#' @importFrom dplyr select
 #' @export
 #My Random Forest Cross-Validation function
 my_rf_cv <- function(k){
