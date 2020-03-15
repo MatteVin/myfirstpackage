@@ -19,7 +19,7 @@
 #' my_knn_cv(train = iris[,-5], cl = iris[,5], k_nn = 1, k_cv = 5)
 #' my_knn_cv(train = iris[,-5], cl = iris[,5], k_nn = 4, k_cv = 5)
 #'
-#' @import stats class dplyr
+#' @import stats class tidyverse
 #'
 #' @export
 #My k-Nearest Neighbors Cross-Validation function
