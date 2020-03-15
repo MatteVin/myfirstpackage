@@ -7,7 +7,13 @@
 my_knn_cv(train, cl, k_nn, k_cv)
 }
 \arguments{
-\item{k_cv}{}
+\item{train}{input data frame.}
+
+\item{cl}{true class value of training data.}
+
+\item{k_nn}{integer representing the number of neighbors}
+
+\item{k_cv}{integer representing the number of folds}
 }
 \value{
 A table containing all numerics, with one row for each coefficient
@@ -19,4 +25,9 @@ the t-test).
 This function is used to fit linear models. It can be used to carry out
 regressions.
 }
-\keyword{}
+\examples{
+my_knn_cv(train = iris[,-5], cl = iris[,5], k_nn = 1, k_cv = 5)
+my_knn_cv(train = iris[,-5], cl = iris[,5], k_nn = 4, k_cv = 5)
+
+}
+\keyword{potato}

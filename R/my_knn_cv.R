@@ -3,17 +3,21 @@
 #' This function is used to fit linear models. It can be used to carry out
 #' regressions.
 #'
-#' @param train
-#' @param cl
-#' @param k_nn
-#' @param k_cv
+#' @param train input data frame.
+#' @param cl true class value of training data.
+#' @param k_nn integer representing the number of neighbors
+#' @param k_cv integer representing the number of folds
+#'
+#' @keywords potato
 #'
 #' @return A table containing all numerics, with one row for each coefficient
 #' including the intercept and colums for the \code{Estimate}, the
 #' \code{Std. Error}, the \code{t value}, and \code{Pr(>|t|)} (the p-value for
 #' the t-test).
 #'
-#' @keywords
+#' @examples
+#' my_knn_cv(train = iris[,-5], cl = iris[,5], k_nn = 1, k_cv = 5)
+#' my_knn_cv(train = iris[,-5], cl = iris[,5], k_nn = 4, k_cv = 5)
 #'
 #' @import stats class dplyr
 #'
