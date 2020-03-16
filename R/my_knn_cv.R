@@ -1,29 +1,43 @@
 #' k-Nearest Neighbors Cross-Validation.
 #' @import class stats dplyr
 #' @export
-my_knn_cv <- function(train, cl, k_nn, k_cv) {
-  # check if k_nn and k_cv are both numeric, if not, stop and show error information
-  if (!is.numeric(k_nn) || !is.numeric(k_cv)) {
-    stop("k_nn and k_cv must be numeric")
+#My k-Nearest Neighbors Cross-Validation function
+my_knn_cv <- function(train, cl, k_nn, k_cv){
+  # Split data in k_cv parts, randomly
+  folds <- sample(rep(1:k_cv, length = nrow(train)))
+  # Combines input data
+  data <- data.frame(cl, folds, train)
+  #initializes cv error as 0
+  cv_err <- 0
+  #loops trough the different folds testing one against the rest
+  for(i in 1:k_cv){
+    #store training data for the iteration
+    data_train <- data %>% filter(folds != i)
+    #records the response for the training data
+    cl_train <- data_train[["cl"]]
+    #eliminates the folds and responses from the data
+    #store testing data for the iteration
+    data_test <- data %>% filter(folds == i)
+    #records the response for the testing data
+    cl_test <- data_test[["cl"]]
+    #eliminates the folds and responses from the data
+    data_train <- data_train[,-1]
+    data_test <- data_test[,-1]
+    data_train<- data_train[,-1]
+    data_test <- data_test[,-1]
+    #pedics the response of the test data suing k-Nearest Neighbors (k = k_nn)
+    predict_cv <- knn(train = data_train,
+                      cl = cl_train,
+                      test = data_test,
+                      k = k_nn
+    )
+    #calculates and compunds the average cv errro
+    cv_err <- ((sum(ifelse(cl_test == predict_cv, 0, 1)) / length(cl_test)) +
+                 cv_err * (i - 1)) / i
   }
-  # split data in k_cv parts, randomly
-  fold <- sample(rep(1:k_cv, length = length(cl)))
-  data <- data.frame("x" = train, "y" = cl, "split" = fold)
-  class <- c()
-  cv_err <- rep(NA, k_cv)
-  fold_l <- length(cl) / k_cv
-  # iterate through i = 1 to k_cv
-  for (i in 1:k_cv) {
-    # predict class value of the ith fold using all other folds as training data
-    data_train <- data %>% dplyr::filter(split != i)
-    data_test <- data %>% dplyr::filter(split == i)
-    y_hat <- knn(select(data_train, contains("x")), select(data_test, contains("x")), data_train$y, k_nn)
-    class <- c(class, y_hat)
-    # record the prediction and the misclassification rate
-    cv_err[i] = sum(y_hat != data_test$y) / fold_l
-  }
-  y_hat <- knn(train, train, cl, k_nn)
-  train_err = sum(as.numeric(y_hat != cl)) / length(cl)
-  output <- list("class" = class, "cv_err" = mean(cv_err), "te" = train_err)
-  return(output)
+  #stores the predictions of all the data using all the data for training.
+  class <- knn(train = train, cl = cl, test = train, k = k_nn)
+  #return results
+  result <- list("class" = class, "cv_err" = cv_err)
+  return(result)
 }
