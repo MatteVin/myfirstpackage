@@ -22,8 +22,10 @@ my_knn_cv <- function(train, cl, k_nn, k_cv){
     #eliminates the folds and responses from the data
     data_train <- data_train[,-1]
     data_test <- data_test[,-1]
-    data_train<- data_train[,-1]
+    data_train <- data_train[,-1]
     data_test <- data_test[,-1]
+    data_train<- data.frame(data_train)
+    data_test <- data.frame(data_test)
     #pedics the response of the test data suing k-Nearest Neighbors (k = k_nn)
     predict_cv <- knn(train = data_train,
                       cl = cl_train,
