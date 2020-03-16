@@ -1,4 +1,4 @@
-#' k-Nearest Neighbors Cross-Validation.
+#' K-Nearest Neighbors Cross-Validation.
 #'
 #' @import class stats dplyr
 #'
