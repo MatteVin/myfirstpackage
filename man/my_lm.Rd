@@ -6,25 +6,6 @@
 \usage{
 my_lm(formula, data)
 }
-\arguments{
-\item{formula}{a \code{formula} class object: a symbolic description of the
-model to be fitted.}
-
-\item{data}{input data frame.}
-}
-\value{
-A table containing all numerics, with one row for each coefficient
-including the intercept and colums for the \code{Estimate}, the
-\code{Std. Error}, the \code{t value}, and \code{Pr(>|t|)} (the p-value for
-the t-test).
-}
 \description{
-This function is used to fit linear models. It can be used to carry out
-regressions.
+Fitting Linear Models
 }
-\examples{
-my_lm(Sepal.Length ~ Sepal.Width, data = my_iris)
-my_lm(Sepal.Length ~ Sepal.Width + Petal.Length, data = my_iris)
-
-}
-\keyword{}

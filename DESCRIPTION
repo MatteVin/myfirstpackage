@@ -19,5 +19,6 @@ Suggests:
     knitr,
     rmarkdown,
     ggplot2
-Imports: dplyr, magrittr, class, randomForest, stats
+Imports: magrittr, 
+    class
 VignetteBuilder: knitr

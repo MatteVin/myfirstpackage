@@ -6,13 +6,6 @@
 \usage{
 my_rf_cv(k)
 }
-\arguments{
-\item{k}{something something.}
-}
-\value{
-something must be returned.
-}
 \description{
-description.
+Random Forest Cross-Validation
 }
-\keyword{shower}

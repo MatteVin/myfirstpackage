@@ -1,25 +1,5 @@
 #' Fitting Linear Models
 #'
-#' This function is used to fit linear models. It can be used to carry out
-#' regressions.
-#'
-#' @param formula a \code{formula} class object: a symbolic description of the
-#' model to be fitted.
-#' @param data input data frame.
-#'
-#' @return A table containing all numerics, with one row for each coefficient
-#' including the intercept and colums for the \code{Estimate}, the
-#' \code{Std. Error}, the \code{t value}, and \code{Pr(>|t|)} (the p-value for
-#' the t-test).
-#'
-#' @examples
-#' my_lm(Sepal.Length ~ Sepal.Width, data = my_iris)
-#' my_lm(Sepal.Length ~ Sepal.Width + Petal.Length, data = my_iris)
-#'
-#' @keywords
-#'
-#' @import stats
-#'
 #' @export
 #Creates my_lm a function that takes in as parameters a formula and a dataset
 #returning a table containing the appropiate coefficients for the linear model.

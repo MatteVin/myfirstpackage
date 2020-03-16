@@ -6,23 +6,6 @@
 \usage{
 my_knn_cv(train, cl, k_nn, k_cv)
 }
-\arguments{
-\item{train}{input data frame.}
-
-\item{cl}{true class value of training data.}
-
-\item{k_nn}{integer representing the number of neighbors.}
-
-\item{k_cv}{integer representing the number of folds.}
-}
-\value{
-A table containing all numerics, with one row for each coefficient
-including the intercept and colums for the \code{Estimate}, the
-\code{Std. Error}, the \code{t value}, and \code{Pr(>|t|)} (the p-value for
-the t-test).
-}
 \description{
-This function is used to fit linear models. It can be used to carry out
-regressions.
+k-Nearest Neighbors Cross-Validation
 }
-\keyword{potato}
