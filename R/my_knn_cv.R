@@ -1,4 +1,5 @@
 #' K-Nearest Neighbors Cross-Validation.
+#'
 #' @import class stats dplyr
 #'
 #' @export
@@ -28,6 +29,6 @@ my_knn_cv <- function(train, cl, k_nn, k_cv){
   class <- knn(train = train, test = train, cl = cl, k = k_nn)
   cv_err <- mean(cv_err)
   #creates return list
-  results <- list(output, cv_err)
-  return(results)
+  my_output <- list(output, cv_err)
+  return(my_output)
 }
