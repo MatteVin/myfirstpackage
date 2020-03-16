@@ -10,6 +10,7 @@ my_knn_cv <- function(train, cl, k_nn, k_cv){
   cv_err <- 0
   #loops trough the different folds testing one against the rest
   for(i in 1:k_cv){
+    my_gapminder <- my_gapminder
     #store training data for the iteration
     data_train <- data %>% filter(folds != i)
     #records the response for the training data
@@ -21,7 +22,10 @@ my_knn_cv <- function(train, cl, k_nn, k_cv){
     #records the response for the testing data
     cl_test <- data_test["cl"]
     #eliminates the folds and responses from the data
-    data_test <- data_test %>% select(-cl, -folds)
+    data_train$cl <- NULL
+    data_test$cl <- NULL
+    data_train$folds <- NULL
+    data_test$folds <- NULL
     #pedics the response of the test data suing k-Nearest Neighbors (k = k_nn)
     predict_cv <- knn(train = data_train,
                       cl = cl_train,
