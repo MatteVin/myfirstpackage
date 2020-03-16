@@ -1,5 +1,5 @@
 #' Fitting Linear Models
-#'
+#' @import stats
 #' @export
 #Creates my_lm a function that takes in as parameters a formula and a dataset
 #returning a table containing the appropiate coefficients for the linear model.
