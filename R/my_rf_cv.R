@@ -24,15 +24,15 @@ my_rf_cv <- function(k){
   # Split data in k parts, randomly
   folds <- sample(rep(1:k, length = nrow(my_gapminder)))
   # Use data from before, leaving out species as we won't need it
-  data <- data.frame(my_gapminder[, c(4, 6)])
+  data <- my_gapminder[, c(4, 6)]
   #List for string cv errors on each iteration
   cv_err_list <- rep(NA, k)
   #loops trough the groups
   for(i in 1:k) {
     #set the training set
-    data_train <- data[folds != i]
+    data_train <- data[folds != i,]
     #set the testing set
-    data_test <- data[folds == i]
+    data_test <- data[folds == i,]
     #crates a random forest model on the training data
     model_k_i <- randomForest(lifeExp ~ gdpPercap,
                    data = data_train,
