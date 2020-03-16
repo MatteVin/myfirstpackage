@@ -1,7 +1,7 @@
 #' Random Forest Cross-Validation.
 #'
-#' @import class magrittr randomForest dplyr
-#' @importFrom magrittr %>%
+#' @import class randomForest
+#' @importFrom dplyr %>%
 #'
 #' @export
 #My Random Forest Cross-Validation function
