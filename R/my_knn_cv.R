@@ -15,8 +15,6 @@ my_knn_cv <- function(train, cl, k_nn, k_cv){
     data_train <- data %>% filter(folds != i)
     #records the response for the training data
     cl_train <- data_train["cl"]
-    #eliminates the folds and responses from the data
-    data_train <- data_train %>% select(-cl, -folds)
     #store testing data for the iteration
     data_test <- data %>% filter(folds == i)
     #records the response for the testing data
