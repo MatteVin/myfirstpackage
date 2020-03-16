@@ -1,25 +1,45 @@
 #' K-Nearest Neighbors Cross-Validation.
 #'
+#' @param cl true class value of training data.
+#' @param k_nn integer representing the number of neighbors.
+#' @param k_cv integer representing the number of folds.
 #' @import class stats dplyr
+#' @return A list with objects \code{class}, a vector of the predicted class
+#' y_hat when all the data is used for both training and testing, and
+#' \code{cv_err} a numeric with the average cross-validation misclassification
+#' errorr.
+#' @keywords prediction
+#' @examples
+#' my_knn_cv(train = my_iris[,-5], cl = my_iris[,5], k_nn = 1, k_cv = 5)
+#' my_knn_cv(train = my_gapminder[,-4], cl = my_iris[,4], k_nn = 4, k_cv = 8)
 #'
 #' @export
 my_knn_cv <- function(train, cl, k_nn, k_cv){
-  n <- nrow(train)
-  inds <- sample(rep(1:k_cv, length = n))
+  #creates folds to devide data between training and testing
+  folds <- sample(rep(1:k_cv, length = nrow(train)))
+  #inizializes vecor containing the error for each iteration k_cv
   cv_err <- rep(NA, k_cv)
   for (i in 1:k_cv) {
-    #splits the data and true species into training and testing sets
-    data_train <- train[inds != i,]
-    data_test <- train[inds == i,]
-    cl_train <- cl[inds != i]
-    cl_test <- cl[inds == i]
-    class_output <- knn(train = data_train,
-                        test = data_test,
-                        cl = cl_train, k = k_nn)
-    #records errors of the predictions
-    cv_err[i] <- sum(class_output != cl_test)/length(cl_test)
+    #splits the data between training and testing according to the folds
+    data_test <- train[folds == i,]
+    data_train <- train[folds != i,]
+    #splits the true class value between training and testing according to
+    #the folds
+    cl_test <- cl[folds == i]
+    cl_train <- cl[folds != i]
+    #pedics the response of the test data suing k-Nearest Neighbors (k = k_nn)
+    predict_cv <- knn(train = data_train,
+                      test = data_test,
+                      cl = cl_train,
+                      k = k_nn
+                      )
+    #adds to the error list the rate of error of the model
+    cv_err[i] <- sum(predict_cv != cl_test)/length(cl_test)
   }
-  output <- knn(train = train, test = train, cl = cl, k = k_nn)
-  my_output <- list(class_output, mean(cv_err))
-  return(my_output)
+  #stores the predictions of all the data using all the data for training.
+  class <- knn(train = train, test = train, cl = cl, k = k_nn)
+  cv_err <- mean(cv_err)
+  #creates return list
+  results <- list(output, cv_err)
+  return(results)
 }

@@ -6,6 +6,25 @@
 \usage{
 my_knn_cv(train, cl, k_nn, k_cv)
 }
+\arguments{
+\item{cl}{true class value of training data.}
+
+\item{k_nn}{integer representing the number of neighbors.}
+
+\item{k_cv}{integer representing the number of folds.}
+}
+\value{
+A list with objects \code{class}, a vector of the predicted class
+y_hat when all the data is used for both training and testing, and
+\code{cv_err} a numeric with the average cross-validation misclassification
+errorr.
+}
 \description{
 K-Nearest Neighbors Cross-Validation.
 }
+\examples{
+my_knn_cv(train = my_iris[,-5], cl = my_iris[,5], k_nn = 1, k_cv = 5)
+my_knn_cv(train = my_gapminder[,-4], cl = my_iris[,4], k_nn = 4, k_cv = 8)
+
+}
+\keyword{prediction}

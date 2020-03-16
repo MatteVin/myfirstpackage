@@ -1,7 +1,6 @@
 #' Student's t-test
 #'
 #' @export
-#t-test function
 my_t_test <- function(x, alternative, mu) {
   #check for the parameter alternative to be one of the three allowed, if it
   #isn't give a warning.
