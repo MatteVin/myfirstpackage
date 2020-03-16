@@ -20,5 +20,6 @@ Suggests:
     rmarkdown,
     ggplot2
 Imports: magrittr, 
-    class
+    class, 
+    randomForest
 VignetteBuilder: knitr
