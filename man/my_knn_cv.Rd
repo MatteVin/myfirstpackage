@@ -20,7 +20,8 @@ y_hat when all the data is used for both training and testing, and
 errorr.
 }
 \description{
-K-Nearest Neighbors Cross-Validation.
+This function uses k-nearest neighbors cross validation to predict the output
+class.
 }
 \examples{
 my_knn_cv(train = my_gapminder[, c(4, 6)], cl = my_gapminder$continent, k_nn = 5, k_cv = 5)
