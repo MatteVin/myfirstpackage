@@ -1,23 +1,4 @@
 #' K-Nearest Neighbors Cross-Validation.
-#'
-#' This function uses k-nearest neighbors cross validation to predict the output
-#' class.
-#'
-#' @param train data frame input.
-#' @param cl true class value of training data.
-#' @param k_nn integer representing the number of neighbors.
-#' @param k_cv integer representing the number of folds.
-#'
-#' @keywords prediction
-#'
-#' @return A list with objects class, a vector of the predicted class
-#' y_hat when all the data is used for both training and testing, and
-#' cv_err a numeric with the average cross-validation misclassification
-#' errorr.
-#'
-#' @examples
-#' my_knn_cv(train = my_gapminder[, c(4, 6)], cl = my_gapminder$continent, k_nn = 5, k_cv = 5)
-#'
 #' @import class stats dplyr
 #'
 #' @export

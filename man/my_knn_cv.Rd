@@ -6,27 +6,6 @@
 \usage{
 my_knn_cv(train, cl, k_nn, k_cv)
 }
-\arguments{
-\item{train}{data frame input.}
-
-\item{cl}{true class value of training data.}
-
-\item{k_nn}{integer representing the number of neighbors.}
-
-\item{k_cv}{integer representing the number of folds.}
-}
-\value{
-A list with objects class, a vector of the predicted class
-y_hat when all the data is used for both training and testing, and
-cv_err a numeric with the average cross-validation misclassification
-errorr.
-}
 \description{
-This function uses k-nearest neighbors cross validation to predict the output
-class.
+K-Nearest Neighbors Cross-Validation.
 }
-\examples{
-my_knn_cv(train = my_gapminder[, c(4, 6)], cl = my_gapminder$continent, k_nn = 5, k_cv = 5)
-
-}
-\keyword{prediction}
