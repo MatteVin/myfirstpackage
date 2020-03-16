@@ -24,7 +24,7 @@ my_rf_cv <- function(k){
   # Split data in k parts, randomly
   folds <- sample(rep(1:k, length = nrow(my_iris)))
   # Use data from before, leaving out species as we won't need it
-  data <- data.frame(my_gapminder[, c(4, 6)], folds)
+  data <- data.frame(my_gapminder, folds)
   #List for string cv errors on each iteration
   cv_err_list <- rep(NA, k)
   #loops trough the groups
