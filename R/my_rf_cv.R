@@ -1,14 +1,30 @@
 #' Random Forest Cross-Validation.
 #'
+#' my_rf_cv implements Breiman's random forest algorithm (based on Breiman and
+#' Cutler's original Fortran code) for classification and regression. The
+#' function runs the algoritms for the given number of folds and implements the
+#' algoritm on my_gapminder, predicting lifeExp using covariate gdpPercap.
+#'
+#' @param k number of folds.
+#'
+#' @return Return the average Mean Squared Error across all k folds.
+#'
+#' @keywords prediction
+#'
+#' @examples
+#' my_rf_cv(4)
+#' my_rf_cv(2)
+#'
 #' @import class randomForest dplyr
 #'
 #' @export
 #My Random Forest Cross-Validation function
 my_rf_cv <- function(k){
+  my_gapminder <- my_gapminder
   # Split data in k parts, randomly
   folds <- sample(rep(1:k, length = nrow(my_iris)))
   # Use data from before, leaving out species as we won't need it
-  data <- data.frame(my_iris[,-5], folds)
+  data <- data.frame(my_gapminder[, c(4, 6)], folds)
   #List for string cv errors on each iteration
   cv_err_list <- rep(NA, k)
   #loops trough the groups
@@ -19,7 +35,7 @@ my_rf_cv <- function(k){
     data_test <- data %>% filter(folds == i)  %>% select(-folds)
     #crates a random forest model on the training data
     model_k_i <-
-      randomForest(Sepal.Length ~ Sepal.Width + Petal.Length + Petal.Width,
+      randomForest(lifeExp ~ gdpPercap.,
                    data = data_train,
                    ntree = 100
       )

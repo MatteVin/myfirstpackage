@@ -1,4 +1,24 @@
 #' Student's t-test
+#'	#'
+#' This function performs a one sample student's t-test on a vector of data.
+#'
+#' @param  x 	a numeric vector of data.
+#' @param  alternative a character string specifying the alternative hypothesis.
+#' This only accepts "two.sided", "less", or "greater".
+#' @param  mu  a number indicating the null hypothesis value of the mean.
+#'
+#' @return A list with elements: \code{test_stat}, the numeric test statistic;
+#' \code{df}, a numeric containing the degrees of freedom; \code{alternative}
+#' character containing the value of the parameter alternative; \code{p_val},
+#' a numeric p-value.
+#'
+#' @examples
+#' my_t_test(c(1, 5 ,4 , 5, 2, 6, 4), "greater", 5)
+#' my_t_test(1:20, "two.sided", 18)
+#'
+#' @keywords
+#'
+#' @import stats
 #'
 #' @export
 my_t_test <- function(x, alternative, mu) {

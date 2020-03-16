@@ -1,4 +1,22 @@
 #' Fitting Linear Models
+#'
+#' This function is used to fit linear models. It can be used to carry out
+#' regressions.
+#'
+#' @param formula Numeric input of a formula  a symbolic description of the
+#' model to be fitted.
+#' @param data Dataframe containing the data to be used used in \code{formula}
+#'
+#' @keywords inference
+#'
+#' @return Table object containing numeric estimates for coefficients, standard
+#' error, t value, and p value. With a line for each explanatory variables plus
+#' the intercept.
+#'
+#' @examples
+#' my_lm(lifeExp~ gdpPercap + continent, my_gapminder)
+#' my_lm(Sepal.Length ~ Sepal.Width + Petal.Length + Petal.Width , my_iris)
+#'
 #' @import stats
 #' @export
 #Creates my_lm a function that takes in as parameters a formula and a dataset

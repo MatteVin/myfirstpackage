@@ -6,6 +6,21 @@
 \usage{
 my_rf_cv(k)
 }
-\description{
-Random Forest Cross-Validation.
+\arguments{
+\item{k}{number of folds.}
 }
+\value{
+Return the average Mean Squared Error across all k folds.
+}
+\description{
+my_rf_cv implements Breiman's random forest algorithm (based on Breiman and
+Cutler's original Fortran code) for classification and regression. The
+function runs the algoritms for the given number of folds and implements the
+algoritm on my_gapminder, predicting lifeExp using covariate gdpPercap.
+}
+\examples{
+my_rf_cv(4)
+my_rf_cv(2)
+
+}
+\keyword{prediction}

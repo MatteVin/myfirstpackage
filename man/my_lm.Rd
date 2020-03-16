@@ -6,6 +6,24 @@
 \usage{
 my_lm(formula, data)
 }
-\description{
-Fitting Linear Models
+\arguments{
+\item{formula}{Numeric input of a formula  a symbolic description of the
+model to be fitted.}
+
+\item{data}{Dataframe containing the data to be used used in \code{formula}}
 }
+\value{
+Table object containing numeric estimates for coefficients, standard
+error, t value, and p value. With a line for each explanatory variables plus
+the intercept.
+}
+\description{
+This function is used to fit linear models. It can be used to carry out
+regressions.
+}
+\examples{
+my_lm(lifeExp~ gdpPercap + continent, my_gapminder)
+my_lm(Sepal.Length ~ Sepal.Width + Petal.Length + Petal.Width , my_iris)
+
+}
+\keyword{inference}
