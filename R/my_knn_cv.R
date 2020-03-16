@@ -8,9 +8,9 @@
 #' @param k_cv integer representing the number of folds.
 #' @keywords prediction
 #'
-#' @return A list with objects \code{class}, a vector of the predicted class
+#' @return A list with objects class, a vector of the predicted class
 #' y_hat when all the data is used for both training and testing, and
-#' \code{cv_err} a numeric with the average cross-validation misclassification
+#' cv_err a numeric with the average cross-validation misclassification
 #' errorr.
 #'
 #' @examples

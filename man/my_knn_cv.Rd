@@ -14,9 +14,9 @@ my_knn_cv(train, cl, k_nn, k_cv)
 \item{k_cv}{integer representing the number of folds.}
 }
 \value{
-A list with objects \code{class}, a vector of the predicted class
+A list with objects class, a vector of the predicted class
 y_hat when all the data is used for both training and testing, and
-\code{cv_err} a numeric with the average cross-validation misclassification
+cv_err a numeric with the average cross-validation misclassification
 errorr.
 }
 \description{
