@@ -20,7 +20,7 @@
 #' my_knn_cv(train = my_gapminder[,5:6], cl = my_gapminder$continent, k_nn = 3,
 #' k_cv = 10)
 #'
-#' @import class stats dplyr
+#' @import class stats magrittr
 #'
 #' @export
 my_knn_cv <- function(train, cl, k_nn, k_cv){

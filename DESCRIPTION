@@ -23,5 +23,5 @@ Imports:
     class, 
     randomForest,
     stats,
-    dplyr
+    magrittr
 VignetteBuilder: knitr
