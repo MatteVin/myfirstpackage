@@ -1,7 +1,6 @@
 #' Random Forest Cross-Validation.
 #'
-#' @import class randomForest
-#' @importFrom dplyr %>%
+#' @import class randomForest dplyr
 #'
 #' @export
 #My Random Forest Cross-Validation function

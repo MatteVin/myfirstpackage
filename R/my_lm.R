@@ -6,6 +6,8 @@
 my_lm <- function(formula, data) {
   #Extracts model matrix X.
   X_lm <- model.matrix(formula, data)
+  #creates the model frame
+  x_frame <- model.frame(formula, data)
   #Extract a model respopnse Y.
   Y_lm <- model.response(model.frame(data))
   #Estimates linear regression coefficients.

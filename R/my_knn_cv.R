@@ -1,5 +1,5 @@
 #' k-Nearest Neighbors Cross-Validation.
-#'
+#' @import class stats dplyr
 #' @export
 my_knn_cv <- function(train, cl, k_nn, k_cv){
   # Split data in k_cv parts, randomly
