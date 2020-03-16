@@ -15,7 +15,7 @@
 #' my_rf_cv(4)
 #' my_rf_cv(2)
 #'
-#' @import class randomForest magrittr
+#' @import class randomForest dplyr
 #'
 #' @export
 #My Random Forest Cross-Validation function
