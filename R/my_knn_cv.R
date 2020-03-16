@@ -3,9 +3,11 @@
 #' This function uses k-nearest neighbors cross validation to predict the output
 #' class.
 #'
+#' @param train data frame input.
 #' @param cl true class value of training data.
 #' @param k_nn integer representing the number of neighbors.
 #' @param k_cv integer representing the number of folds.
+#'
 #' @keywords prediction
 #'
 #' @return A list with objects class, a vector of the predicted class
