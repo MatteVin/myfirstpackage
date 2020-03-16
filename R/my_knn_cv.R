@@ -13,13 +13,13 @@ my_knn_cv <- function(train, cl, k_nn, k_cv){
     #store training data for the iteration
     data_train <- data %>% filter(folds != i)
     #records the response for the training data
-    cl_train <- data_train[["cl"]]
+    cl_train <- data_train["cl"]
     #eliminates the folds and responses from the data
     data_train <- data_train %>% select(-cl, -folds)
     #store testing data for the iteration
     data_test <- data %>% filter(folds == i)
     #records the response for the testing data
-    cl_test <- data_test[["cl"]]
+    cl_test <- data_test["cl"]
     #eliminates the folds and responses from the data
     data_test <- data_test %>% select(-cl, -folds)
     #pedics the response of the test data suing k-Nearest Neighbors (k = k_nn)
