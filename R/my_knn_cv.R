@@ -5,7 +5,7 @@ my_knn_cv <- function(train, cl, k_nn, k_cv){
   # Split data in k_cv parts, randomly
   folds <- sample(rep(1:k_cv, length = nrow(train)))
   # Combines input data
-  data <- data.frame(train, cl, folds)
+  data <- data.frame(cl, folds, train)
   #initializes cv error as 0
   cv_err <- 0
   #loops trough the different folds testing one against the rest
@@ -20,10 +20,10 @@ my_knn_cv <- function(train, cl, k_nn, k_cv){
     #records the response for the testing data
     cl_test <- data_test["cl"]
     #eliminates the folds and responses from the data
-    data_train$cl <- NULL
-    data_test$cl <- NULL
-    data_train$folds <- NULL
-    data_test$folds <- NULL
+    data_train <- data_train[,-1]
+    data_test <- data_test[,-1]
+    data_train<- data_train[,-1]
+    data_test <- data_test[,-1]
     #pedics the response of the test data suing k-Nearest Neighbors (k = k_nn)
     predict_cv <- knn(train = data_train,
                       cl = cl_train,
