@@ -1,4 +1,4 @@
-#' k-Nearest Neighbors Cross-Validation
+#' k-Nearest Neighbors Cross-Validation.
 #'
 #' @export
 my_knn_cv <- function(train, cl, k_nn, k_cv){

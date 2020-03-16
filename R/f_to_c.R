@@ -1,4 +1,4 @@
-#' Fahrenhite converter
+#' Fahrenhite converter.
 #'
 #' This function converts from Fahrenhite to Celsius.
 #'

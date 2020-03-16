@@ -20,8 +20,8 @@ Suggests:
     rmarkdown,
     ggplot2
 Imports: 
-    magrittr, 
     class, 
     randomForest,
+    stats,
     dplyr
 VignetteBuilder: knitr

@@ -3,7 +3,7 @@
 \docType{data}
 \name{my_gapminder}
 \alias{my_gapminder}
-\title{Edgard Anderson's Iris Data}
+\title{Edgard Anderson's Iris Data.}
 \format{
 a data frame with 1704 observations and 6 variables:
 \describe{

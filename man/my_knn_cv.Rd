@@ -2,10 +2,10 @@
 % Please edit documentation in R/my_knn_cv.R
 \name{my_knn_cv}
 \alias{my_knn_cv}
-\title{k-Nearest Neighbors Cross-Validation}
+\title{k-Nearest Neighbors Cross-Validation.}
 \usage{
 my_knn_cv(train, cl, k_nn, k_cv)
 }
 \description{
-k-Nearest Neighbors Cross-Validation
+k-Nearest Neighbors Cross-Validation.
 }

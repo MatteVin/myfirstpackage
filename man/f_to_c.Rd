@@ -2,7 +2,7 @@
 % Please edit documentation in R/f_to_c.R
 \name{f_to_c}
 \alias{f_to_c}
-\title{Fahrenhite converter}
+\title{Fahrenhite converter.}
 \usage{
 f_to_c(temp_F)
 }

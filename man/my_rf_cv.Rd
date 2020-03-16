@@ -2,10 +2,10 @@
 % Please edit documentation in R/my_rf_cv.R
 \name{my_rf_cv}
 \alias{my_rf_cv}
-\title{Random Forest Cross-Validation}
+\title{Random Forest Cross-Validation.}
 \usage{
 my_rf_cv(k)
 }
 \description{
-Random Forest Cross-Validation
+Random Forest Cross-Validation.
 }
