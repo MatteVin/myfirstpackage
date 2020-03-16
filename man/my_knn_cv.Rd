@@ -23,8 +23,7 @@ errorr.
 K-Nearest Neighbors Cross-Validation.
 }
 \examples{
-my_knn_cv(train = my_iris[,-5], cl = my_iris[,5], k_nn = 1, k_cv = 5)
-my_knn_cv(train = my_gapminder[,-4], cl = my_iris[,4], k_nn = 4, k_cv = 8)
+my_knn_cv(train = my_gapminder[, c(4, 6)], cl = my_gapminder$continent, k_nn = 5, k_cv = 5)
 
 }
 \keyword{prediction}
