@@ -1,7 +1,7 @@
 #' Random Forest Cross-Validation
 #'
-#' @import class magrittr randomForest
-#'
+#' @import class magrittr randomForest dplyr
+#' @importFrom magrittr %>%
 #' @export
 #My Random Forest Cross-Validation function
 my_rf_cv <- function(k){
