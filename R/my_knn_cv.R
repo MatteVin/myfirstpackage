@@ -27,7 +27,8 @@ my_knn_cv <- function(train, cl, k_nn, k_cv){
     data_train<- data.frame(data_train)
     data_test <- data.frame(data_test)
     #pedics the response of the test data suing k-Nearest Neighbors (k = k_nn)
-    predict_cv <- knn(train = data_train,
+    predict_cv <- knn(train =  data_train[complete.cases(data_train), ],
+                      test = data_test[complete.cases(data_test), ],
                       cl = cl_train,
                       test = data_test,
                       k = k_nn
