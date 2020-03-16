@@ -9,7 +9,7 @@ my_lm <- function(formula, data) {
   #creates the model frame
   x_frame <- model.frame(formula, data)
   #Extract a model respopnse Y.
-  Y_lm <- model.response(model.frame(data))
+  Y_lm <- model.response(x_frame)
   #Estimates linear regression coefficients.
   beta_lm <- solve(t(X_lm) %*% X_lm) %*%  t(X_lm) %*% Y_lm
   #Estimates the degrees of freedom.
