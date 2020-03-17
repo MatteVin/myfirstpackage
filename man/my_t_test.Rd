@@ -17,9 +17,9 @@ This only accepts "two.sided", "less", or "greater".}
 \item{mu}{a number indicating the null hypothesis value of the mean.}
 }
 \value{
-A list with elements: \code{test_stat}, the numeric test statistic;
-\code{df}, a numeric containing the degrees of freedom; \code{alternative}
-character containing the value of the parameter alternative; \code{p_val},
+A list with elements: test_stat, the numeric test statistic;
+df, a numeric containing the degrees of freedom; alternative
+character containing the value of the parameter alternative; p_val,
 a numeric p-value.
 }
 \description{
