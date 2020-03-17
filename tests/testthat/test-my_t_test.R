@@ -12,5 +12,8 @@ test_that("my_t_test works matematically", {
   expect_equal(unname(my_t_test(1:20, "two.sided", 18)),comparason)
 })
 test_that("my_t_test outputs error when icorrect parameter is used", {
-  expect_error(my_t_test("one.sided", "two.sided", "three.sided"))
+  expect_error(my_t_test("one.sided", "greater", "three.sided"))
+})
+test_that("my_t_test outputs error wrong alternative is used", {
+  expect_warning(my_t_test(1:20, "one.sided", 15))
 })

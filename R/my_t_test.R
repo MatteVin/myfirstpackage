@@ -1,5 +1,5 @@
 #' Student's t-test
-#'	#'
+#'
 #' This function performs a one sample student's t-test on a vector of data.
 #'
 #' @param  x 	a numeric vector of data.

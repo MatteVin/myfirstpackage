@@ -1,7 +1,6 @@
 #' Fitting Linear Models
 #'
-#' This function is used to fit linear models. It can be used to carry out
-#' regressions.
+#' This function is used to fit a linear model to imput data.
 #'
 #' @param formula Numeric input of a formula  a symbolic description of the
 #' model to be fitted.

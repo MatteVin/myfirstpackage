@@ -2,9 +2,7 @@
 % Please edit documentation in R/my_t_test.R
 \name{my_t_test}
 \alias{my_t_test}
-\title{Student's t-test
-#'
-This function performs a one sample student's t-test on a vector of data.}
+\title{Student's t-test}
 \usage{
 my_t_test(x, alternative, mu)
 }
@@ -23,8 +21,6 @@ character containing the value of the parameter alternative; p_val,
 a numeric p-value.
 }
 \description{
-Student's t-test
-#'
 This function performs a one sample student's t-test on a vector of data.
 }
 \examples{

@@ -18,8 +18,7 @@ error, t value, and p value. With a line for each explanatory variables plus
 the intercept.
 }
 \description{
-This function is used to fit linear models. It can be used to carry out
-regressions.
+This function is used to fit a linear model to imput data.
 }
 \examples{
 my_lm(lifeExp~ gdpPercap + continent, my_gapminder)

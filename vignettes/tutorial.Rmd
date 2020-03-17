@@ -8,6 +8,11 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
+\addtolength{\headheight}{-.025\textheight} 
+\thispagestyle{fancyplain} 
+\rhead{\includegraphics[height=.1\textheight]{logo.png}}
+\renewcommand{\headrulewidth}{0pt}
+
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
@@ -15,47 +20,183 @@ knitr::opts_chunk$set(
 )
 ```
 
-```{r setup}
-library(myfirstpackage)
+
+
+## Vignette Information
+
+I thank Bryan Martin for having tought me everything I know about R.
+
+## Introduction
+
+This package is my project 3 for UW's STAT302. And it maily contains 4 functions:
+
+* `my_t_test`
+* `my_lm`
+* `my_knn_cv`
+* `my_fr_cv`
+
+Moreover we can find the less imprtant functions `my_f_to_c` and `my_pow` and the dataset `my_iris`, which we won't discuss in this vignette. The package also contains `my_gapminder`, the dataset we will use for the tutorials.
+
+Here, we introduce myfirstpackage, a package developed in a statitistical softwer class. It contains some of the most basic and essential functions for statistical inference and predictions.
+
+Note that in order to follow along with this tutorial you will need to have installed ggplot2.
+
+Install myfirstpackage using:
+```{r, eval = FALSE}
+devtools::install_github("MatteVin/myfirstpackage")
 ```
-A brief introductory paragraph explaining the package
-This paragraph should include instructions for how to install your package from Github.
-The install instructions should be demonstrated with code that is not evaluated (eval = FALSE).
-Make sure to include a call to library() for your package.
 
-A tutorial for my_t.test
-Use the lifeExp data from my_gapminder.
-Demonstrate a test of the hypothesis
-H0:μHa:μ=60,≠60.
-Demonstrate a test of the hypothesis
-H0:μHa:μ=60,<60.
-Demonstrate a test of the hypothesis
-H0:μHa:μ=60,>60.
-For each of the tests above, carefully interpret the results using a p-value cut-off of α=0.05.
+Then we need to load the following packages
+```{r setup, warning = FALSE,message = FALSE}
+library(myfirstpackage)
+library(ggplot2)
+library(dplyr)
+```
 
-A tutorial for my_lm
-Demonstrate a regression using lifeExp as your response variable and gdpPercap and continent as explanatory variables.
-Carefully interpret the gdpPercap coefficient.
-Write the hypothesis test associated with the gdpPercap coefficient.
-Carefully interpret the results the gdpPercap hypothesis test using a p-value cut-off of α=0.05.
-Use ggplot2 to plot the Actual vs. Fitted values.
-Interpret the Actual vs. Fitted plot and make a statement on what it tells you about model fit.
 
-A tutorial for my_knn_cv
-Predict output class continent using covariates gdpPercap and lifeExp.
-Use 5-fold cross validation (k_cv = 5).
-Iterate from k_nn=1,…,10:
-For each value of k_nn, record the training misclassification rate and the CV misclassification rate (output from your function).
-State which model you would choose based on the training misclassification rates and which model you would choose based on the CV misclassification rates.
-Discuss which model you would choose in practice and why.
-Your explanation(s) should include a general description of what the process of cross-validation is doing and why it is useful.
+## Tutorials 
 
-A tutorial for my_rf_cv
-From Lab 4, switch the input data from iris to my_gapminder.
-Predict lifeExp using covariate gdpPercap.
-Iterate through k in c(2, 5, 10):
-For each value of k, run your function 30 times.
-For each of the 30 iterations, store the CV estimated MSE.
-Use ggplot2 with 3 boxplots to display these data in an informative way. There should be a boxplot associated with each value of k, representing 30 simulations each.
-Use a table to display the average CV estimate and the standard deviation of the CV estimates across k. Your table should have 3 rows (one for each value of k) and 2 columns (one for the mean and the other for the standard deviation).
-Discuss the results you observe in the boxplots and table. Compare the means and standard deviations of the the different values of k and comment on why you think this is the case.
+The following totorial gives some practical demonstrations of how to use the functions and interpret the results.
+
+### Tutorial for my_t.test
+
+`my_t_test` can be used to do a one smaple Student's t-test. For this demonstration we use the variable `lifeExp` from the `my_gapminder` dataset. 
+We set the null hypotesis to be such that:
+\begin{align}
+  H_0: \mu &= 60,\\
+\end{align}
+Then we can inizialize and set 
+```{r}
+mu = 60
+```
+We use  a p-value cut-off of $\alpha = 0.05$, which is the most commonly used.
+Then we run the first alternative hypothesys $H_a: \mu\neq60$
+```{r}
+my_t_test(my_gapminder$lifeExp, alternative = "two.sided", mu)
+```
+We see that the resulting p-value is greater than $\alpha$ and thus we confirm the null hypotesis and reject the alternative one.
+
+Then we run the thirs alternative hypothesys $H_a: \mu < 60$
+```{r}
+my_t_test(my_gapminder$lifeExp, alternative = "less", mu)
+```
+We see that the resulting p-value is less than 0.05 and thus we confirm the null hypotesis and reject the alternative one.
+Then we run the first alternative hypothesys $H_a: \mu>60$
+```{r}
+my_t_test(my_gapminder$lifeExp, alternative = "greater", mu)
+```
+We see that the resulting p-value is greater than 0.05 and thus we confirm the null hypotesis and reject the alternative one.
+
+### Tutorial for my_lm
+We will demonstrate how to use `my_lm` to fit a linear model to some data. To do so we will use `my_gapminder`, the variable `lifeExp` will be the rsponse variable, while `gdpPercap` and `continent` will be used as explanatory variables
+```{r message = FALSE, warning = FALSE}
+test <- my_lm(lifeExp ~ gdpPercap + continent, data = my_gapminder)
+test
+```
+We can oberve that the gdpPercap coefficient appears to be positive but small, only `r test[2,1]`. What we need to keep in mind when we fit any linear model is that the magnetude of a coefficient can be missleading. We can see how `gdpPercap` is in dollars, while `lifeExp` is in years. What this model shows is that for each thousand of dollars increase in gdp per capita we can observe an average increase of almost half a year.
+We first need to set a $H_0$ and a $H_a$.
+$$H_0: coef = 0$$
+$$H_a: coef \neq 0$$
+Then, we will test it using the significant level of 0.05.
+$$ \alpha = 0.05$$
+
+We can see that the p-value, obtained from `my_lm`, less than the $\alpha$, so we can reject the null hypothesis and accept the alternative one. 
+Now we plot actial Vs fitted values.
+
+```{r,fig.height=4, fig.width=7}
+my_coef <- test[, 1]
+my_matrix <- model.matrix(lifeExp ~ gdpPercap + continent, data = my_gapminder)
+y_hat <- my_matrix %*% as.matrix(my_coef)
+my_data <- data.frame("Actual" = my_gapminder$lifeExp, "Fitted" = y_hat, 
+                      "Continent" = my_gapminder$continent)
+ggplot(my_data, aes(x = Actual, y = Fitted, color = Continent)) + 
+  geom_point() + 
+  geom_abline(slope = 1, intercept = 0, col = "black") +
+  labs(title = "Actual vs. Fitted", x = "Actual values", y = "Fitted values") +
+  theme_bw(base_size = 15) +
+
+  theme(plot.title = element_text(hjust = 0.5, face = "bold",size = 15)) 
+```
+From the graph we can observe that the fit is good for Oceania amd most of Europe, while it does farely bad in Africa, America and Asia. We can thus notice that the poorer on average a continent is the worst the fit was, which means that our lineal model works mostly with high gdpPercap values. The reason is that the relationship between `lifeExp` and `gdpPercap` is not linear. Indeed when running regressions using gdpPercap we often take it's log and use it in place, which I believe in this case would have provided a better fit. 
+
+### Tutorial for my_knn_cv
+
+We will now show houw to use `my_knn_cv` to predict output class continent using covariates `gdpPercap` and `lifeExp` from `my_gapminder`.
+We will use 5 folds cross validation
+
+```{r}
+k_cv <- 5
+```
+Then we run the function changing the parameter for the number of neigboors, iterating from 1 to 10. We will record the training misclassification rate and the CV misclassification rate (which is outputed by `my_knn_cv`).
+```{r}
+error_train <- rep(NA, 10)
+error_cv <- rep(NA, 10)
+for(i in 1:10){
+  output <- my_knn_cv(train = my_gapminder[,5:6], 
+                     cl = my_gapminder$continent, 
+                     k_nn = i, 
+                     k_cv = k_cv
+                     )
+  error_train[i] <- sum(output$class != my_gapminder$continent) / 
+    length(output$class)
+  error_cv[i] <- output$cv_err
+}
+result <- data.frame("k_nn" = c(1:10),
+                     "training_error" = error_train,
+                     "cv_err" = error_cv)
+result
+```
+
+Looking at the table, the CV missclassification error is decreasing as the number of 
+neighbors increases. It appears to be farely constant, with only a change `r max(result[,3]) - min(result[,3])`, 
+thus we would chose k_nn = 10. 
+On the other hand training error increases as k_nn increases, thus we would choose knn = 1. 
+The reson why the two measures have opposite trands is that when one inceases the other decreases.
+Think of the CV misclassification rate as a measure of how generalizable to other data the model is.
+While the training error is a measure of how accurately the model predicts the data it has been trained on.
+The more neigboors you take into consideration the more your model will be generalizable (low cross validation error), but then it will get less precise, and training error will increase. 
+Overall I believe that the model is quite weak, scoring always more well above 50% cross validation error. In this case, since the cross validation error is quite high regardless on the number of neighboors, I would use a small k_nn value to try keeping training error down, accepting to have the CV error high. I would probably choose k_nn = 2.
+
+### Tutorial for my_rf_cv
+We will use `my_rf_cv` to predict lifeExp using covariate gdpPercap.
+We iterate through k in c(2, 5, 10):For each value of k, we run the function 30 times and record the MSE for each run.
+.
+```{r}
+mse_cv <- matrix(nrow = 90, ncol = 2)
+
+for(i in 1:30){
+  mse_cv[i, 2] <- my_rf_cv(2)
+  mse_cv[i + 30, 2] <- my_rf_cv(5)
+  mse_cv[i + 60, 2] <- my_rf_cv(10)
+  mse_cv[i, 1] <- "k = 2"
+  mse_cv[i + 30, 1] <- "k = 5"
+  mse_cv[i + 60, 1] <- "k = 10"
+}
+mse_cv_data <- as.data.frame(mse_cv)
+colnames(mse_cv_data) <- c("k", "cv_mse")
+ggplot(mse_cv_data, aes(x = k, y = cv_mse, group = k, fill = factor(k))) +
+geom_boxplot() +
+labs(title = "MSE of k folds", x = "Number of Folds", y = "MSE", 
+       fill = "Number of Folds") +
+  theme_bw(base_size = 15)
+ 
+```
+
+```{r}
+mse_2 <-as.numeric(mse_cv_data[1:30, 2])
+mse_5 <-as.numeric(mse_cv_data[31:60, 2])
+mse_10 <-as.numeric(mse_cv_data[61:90, 2])
+result <- data.frame("k_nn" = c("k=2", "k=5", "k=10"),
+                     "mean_mse" = c(mean(mse_2),
+                                    mean(mse_5),
+                                    mean(mse_10 )
+                                  ),
+                     "sd_mse" = c(sd(mse_2),
+                                    sd(mse_5),
+                                    sd(mse_10)
+                                  )
+)
+result
+```
+We can see the cross validation error decrese as the number of folds increases, 
+in both the table and the graph.
