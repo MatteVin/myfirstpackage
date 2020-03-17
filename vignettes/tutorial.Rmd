@@ -18,3 +18,44 @@ knitr::opts_chunk$set(
 ```{r setup}
 library(myfirstpackage)
 ```
+A brief introductory paragraph explaining the package
+This paragraph should include instructions for how to install your package from Github.
+The install instructions should be demonstrated with code that is not evaluated (eval = FALSE).
+Make sure to include a call to library() for your package.
+
+A tutorial for my_t.test
+Use the lifeExp data from my_gapminder.
+Demonstrate a test of the hypothesis
+H0:μHa:μ=60,≠60.
+Demonstrate a test of the hypothesis
+H0:μHa:μ=60,<60.
+Demonstrate a test of the hypothesis
+H0:μHa:μ=60,>60.
+For each of the tests above, carefully interpret the results using a p-value cut-off of α=0.05.
+
+A tutorial for my_lm
+Demonstrate a regression using lifeExp as your response variable and gdpPercap and continent as explanatory variables.
+Carefully interpret the gdpPercap coefficient.
+Write the hypothesis test associated with the gdpPercap coefficient.
+Carefully interpret the results the gdpPercap hypothesis test using a p-value cut-off of α=0.05.
+Use ggplot2 to plot the Actual vs. Fitted values.
+Interpret the Actual vs. Fitted plot and make a statement on what it tells you about model fit.
+
+A tutorial for my_knn_cv
+Predict output class continent using covariates gdpPercap and lifeExp.
+Use 5-fold cross validation (k_cv = 5).
+Iterate from k_nn=1,…,10:
+For each value of k_nn, record the training misclassification rate and the CV misclassification rate (output from your function).
+State which model you would choose based on the training misclassification rates and which model you would choose based on the CV misclassification rates.
+Discuss which model you would choose in practice and why.
+Your explanation(s) should include a general description of what the process of cross-validation is doing and why it is useful.
+
+A tutorial for my_rf_cv
+From Lab 4, switch the input data from iris to my_gapminder.
+Predict lifeExp using covariate gdpPercap.
+Iterate through k in c(2, 5, 10):
+For each value of k, run your function 30 times.
+For each of the 30 iterations, store the CV estimated MSE.
+Use ggplot2 with 3 boxplots to display these data in an informative way. There should be a boxplot associated with each value of k, representing 30 simulations each.
+Use a table to display the average CV estimate and the standard deviation of the CV estimates across k. Your table should have 3 rows (one for each value of k) and 2 columns (one for the mean and the other for the standard deviation).
+Discuss the results you observe in the boxplots and table. Compare the means and standard deviations of the the different values of k and comment on why you think this is the case.

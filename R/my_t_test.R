@@ -7,9 +7,9 @@
 #' This only accepts "two.sided", "less", or "greater".
 #' @param  mu  a number indicating the null hypothesis value of the mean.
 #'
-#' @return A list with elements: \code{test_stat}, the numeric test statistic;
-#' \code{df}, a numeric containing the degrees of freedom; \code{alternative}
-#' character containing the value of the parameter alternative; \code{p_val},
+#' @return A list with elements: test_stat, the numeric test statistic;
+#' df, a numeric containing the degrees of freedom; alternative
+#' character containing the value of the parameter alternative; p_val,
 #' a numeric p-value.
 #'
 #' @examples
@@ -40,7 +40,7 @@ my_t_test <- function(x, alternative, mu) {
     (1 - p_val)
     #change p_val to both tails.
   } else if(grepl(alternative, "two.sided")){
-    min(p_val, 1 - p_val) * 2
+    abs(min(p_val, 1 - p_val) * 2)
   } else { p_val }
   #combines the results in one list
   result <- list("test_stat" = test_stat,

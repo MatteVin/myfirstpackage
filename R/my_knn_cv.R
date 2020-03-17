@@ -16,7 +16,7 @@
 #' @keywords prediction
 #'
 #' @examples
-#' my_knn_cv(train = my_iris[,-5], cl = my_iris[,5], k_nn = 1, k_cv = 5)
+#' my_knn_cv(train = my_iris[,-5], cl = my_iris[,5], k_nn = 1, k_cv = 3)
 #' my_knn_cv(train = my_gapminder[,5:6], cl = my_gapminder$continent, k_nn = 3,
 #' k_cv = 10)
 #'
